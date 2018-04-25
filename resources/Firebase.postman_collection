@@ -1,0 +1,151 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Firebase",
+		"_postman_id": "ed890cef-5d76-3c66-652d-b8bde884fbd5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"url": {
+					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyA7tXnaGo2DFgppF72IXKW4NwCZGSgdygM",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"identitytoolkit",
+						"v3",
+						"relyingparty",
+						"signupNewUser"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyA7tXnaGo2DFgppF72IXKW4NwCZGSgdygM",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"cfontana0+test01@gmail.com\",\n\t\"password\": \"123456\",\n\t\"returnSecureToken\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"url": {
+					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyA7tXnaGo2DFgppF72IXKW4NwCZGSgdygM",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"identitytoolkit",
+						"v3",
+						"relyingparty",
+						"verifyPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyA7tXnaGo2DFgppF72IXKW4NwCZGSgdygM",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"cfontana0+test01@gmail.com\",\n\t\"password\": \"123456\",\n\t\"returnSecureToken\": true\n}"
+				},
+				"description": "once loged in, copy the idToken response to use on protected endpoints."
+			},
+			"response": []
+		},
+		{
+			"name": "ADD FEEDBACK",
+			"request": {
+				"url": {
+					"raw": "https://us-central1-fir-be-f356b.cloudfunctions.net/addFeedback?text=New feedback",
+					"protocol": "https",
+					"host": [
+						"us-central1-fir-be-f356b",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"addFeedback"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "New feedback",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwNDZhMTU2MzczNjZiNGQ2NGQ5YTVhYmIzMzczMTgyYmE0ZDdjZmIifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLWJlLWYzNTZiIiwiYXVkIjoiZmlyLWJlLWYzNTZiIiwiYXV0aF90aW1lIjoxNTI0NjUzNDEzLCJ1c2VyX2lkIjoicDVMWWZ4dGVscmNnamJEcU9TQTZ1UVA4a0RXMiIsInN1YiI6InA1TFlmeHRlbHJjZ2piRHFPU0E2dVFQOGtEVzIiLCJpYXQiOjE1MjQ2NTM0MTMsImV4cCI6MTUyNDY1NzAxMywiZW1haWwiOiJjZm9udGFuYTArdGVzdDAxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJjZm9udGFuYTArdGVzdDAxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.0fPJDsVWAk6SZcjLDSZe1IyV26hS5J7bdLuPb1XmZga4jvSxxJsrVtx-2QtI9WWtfn3g0nJmsHBiuHVRLcdTIk1L4moQeYvR_zMSMVBU1BaOtgbYNae4OGiCbeBhHiQbEL2fqdZFx0_KErjlmMbWlRTN51w1vpdtn4vPDhINemXJgbXEk9NC-emgbjrYVpj9ddfkCY57F79JhPkkn6OCiy2zLGnAw4G7Wbux0OTDHpat85_uiDsFjTE-J3CZL5Sgaq5x9Sx8L-y4DmvJ5na-albL4UlwiE027r_eY2ty68RN1EanykD64LRz48441imQzeXRo9XlC06TNGeTsdCXFA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Header is requried (login or register to get the idToken):\n\nAuthorization Bearer <idToken> "
+			},
+			"response": []
+		},
+		{
+			"name": "GET FEEDBACKS",
+			"request": {
+				"url": "https://us-central1-fir-be-f356b.cloudfunctions.net/getFeedback",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwNDZhMTU2MzczNjZiNGQ2NGQ5YTVhYmIzMzczMTgyYmE0ZDdjZmIifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLWJlLWYzNTZiIiwiYXVkIjoiZmlyLWJlLWYzNTZiIiwiYXV0aF90aW1lIjoxNTI0NjUzNDEzLCJ1c2VyX2lkIjoicDVMWWZ4dGVscmNnamJEcU9TQTZ1UVA4a0RXMiIsInN1YiI6InA1TFlmeHRlbHJjZ2piRHFPU0E2dVFQOGtEVzIiLCJpYXQiOjE1MjQ2NTM0MTMsImV4cCI6MTUyNDY1NzAxMywiZW1haWwiOiJjZm9udGFuYTArdGVzdDAxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJjZm9udGFuYTArdGVzdDAxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.0fPJDsVWAk6SZcjLDSZe1IyV26hS5J7bdLuPb1XmZga4jvSxxJsrVtx-2QtI9WWtfn3g0nJmsHBiuHVRLcdTIk1L4moQeYvR_zMSMVBU1BaOtgbYNae4OGiCbeBhHiQbEL2fqdZFx0_KErjlmMbWlRTN51w1vpdtn4vPDhINemXJgbXEk9NC-emgbjrYVpj9ddfkCY57F79JhPkkn6OCiy2zLGnAw4G7Wbux0OTDHpat85_uiDsFjTE-J3CZL5Sgaq5x9Sx8L-y4DmvJ5na-albL4UlwiE027r_eY2ty68RN1EanykD64LRz48441imQzeXRo9XlC06TNGeTsdCXFA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Header is requried (login or register to get the idToken):\n\nAuthorization Bearer <idToken> "
+			},
+			"response": []
+		}
+	]
+}
